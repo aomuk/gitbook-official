@@ -1,25 +1,24 @@
 # 简介 
 
-教程分享均是笔者亲身学习经验总结,涉及到的知识点均亲身试验,但有时为了知识完整性,可能并未亲自确认,对于这部分内容会明确指出,到时由读者确认试验.
+`gitbook-official` 是由**雪之梦技术驿站**整理的旧版 `gitbook` **官方文档**,压箱底存货与君共赏,所有版权归属原作者.
 
-如果读者实际运行效果和教程演示效果有出入,很可能是版本问题,系统环境等原因,希望能及时反馈,避免更多人踩坑,谢谢!
+`gitbook` 是一款文档编写工具,用于**漂亮优雅**地构建**电子书**或者发布**静态网站**.
 
-## 特点
+如果你既懂 `markdown` 又熟悉 `git` ,那么使用 `gitbook` 编写文档最合适不过了!
 
-- 面向初学者,适合零基础入门;
-- 面向常用操作,技能实用性强;
-- 情景教学,理清事情来龙去脉;
-- 章节重点知识小结,精华集锦;
+如果你想了解更多关于 `gitbook` 的相关信息,欢迎访问 [gitbook 入门教程](https://snowdreams1006.github.io/myGitbook/) 再决定不晚.
 
-## 要求
+- [原版官方文档](https://snowdreams1006.github.io/gitbook-official/en/)
+- [中文官方文档](https://snowdreams1006.github.io/gitbook-official/zh/)
 
-- 保持哲学三问,是什么,为什么,怎么样?希望最终能有你自己的答案;
-- 好记性不如烂笔头,亲自动手操作一遍,你会发现你的理解更上一层楼;
-- 授人以鱼不如授人以渔,希望带给你不仅仅是知识更多的是学习的方法;
-- 知识重在分享才有价值,鼓励知识传播与分享,创造收益更有价值;
-- 因本人能力有限,如有出入,敬请指正,请联系我 [snowdreams1006](https://github.com/snowdreams1006/)
+> 如果你觉得**官方文档**过于晦涩难懂,想要通缩易懂地了解 `gitbook` ,那么强烈建议参考 [gitbook 入门教程](https://snowdreams1006.github.io/myGitbook/).
 
-## 私信
+## 版权归属原作者
+
+- [https://github.com/GitbookIO/gitbook](https://github.com/GitbookIO/gitbook)
+- [https://github.com/chwshuang/gitbook-site](https://github.com/chwshuang/gitbook-site)
+
+## 雪之梦技术驿站
 
 - 微信公众号 
 
@@ -40,10 +39,3 @@
 如果三言两语很难阐释你遇到的问题,如果你是人见人爱的妹子,那么欢迎加我私人微信一起畅谈人生.
 
 ![snowdreams1109-wechat-private.jpeg](snowdreams1109-wechat-private.jpeg)
-
-## 说明
-
-本教程源码托管在 [snowdreams1006.github.io](https://github.com/snowdreams1006/snowdreams1006.github.io) ,在线访问地址 [https://snowdreams1006.github.io/](https://snowdreams1006.github.io/) 或者 [https://snowdreams1006.gitbook.io/index/](https://snowdreams1006.gitbook.io/index/)
-
-如果你觉得本教程对你有所帮助,请不吝 `Star`.
-如果你想贡献一份力量,欢迎提交 `Pull Request`.
