@@ -20,6 +20,10 @@
 
 ## 雪之梦技术驿站
 
+> gitbook 入门教程 : [https://snowdreams1006.github.io/myGitbook/](https://snowdreams1006.github.io/myGitbook/)
+
+![snowdreams1006.github.io.png](snowdreams1006.github.io.png)
+
 - 微信公众号 
 
 > 名称 : `雪之梦技术驿站`,微信号 : `snowdreams1006` 
