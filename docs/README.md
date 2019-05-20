@@ -1,26 +1,30 @@
-# 简介 
+# 简介 | Introduction
 
-`gitbook-official` 是由**雪之梦技术驿站**整理的旧版 `gitbook` **官方文档**,压箱底存货与君共赏,所有版权归属原作者.
+`GitBook` 是命令行工具(基于 `node.js` 类库),使用`GitHub/Git` 和 `Markdown (or AsciiDoc)` 来构建漂亮的电子书.
+如果你正在寻找 `GitBook` 服务,请访问 [https://www.gitbook.com/](https://www.gitbook.com/).
 
-`gitbook` 是一款文档编写工具,用于**漂亮优雅**地构建**电子书**或者发布**静态网站**.
+`GitBook` is a command line tool (and `Node.js` library) for building beautiful books using `GitHub/Git` and `Markdown (or AsciiDoc)`.
+If you are looking for  `GitBook` service, head to [https://www.gitbook.com/](https://www.gitbook.com/).
 
-如果你既懂 `markdown` 又熟悉 `git` ,那么使用 `gitbook` 编写文档最合适不过了!
+## 文档 | Document 
 
-如果你想了解更多关于 `gitbook` 的相关信息,欢迎访问 [gitbook 入门教程](https://snowdreams1006.github.io/myGitbook/) 再决定不晚.
+- [English](https://snowdreams1006.github.io/gitbook-official/en/)
+- [中文](https://snowdreams1006.github.io/gitbook-official/zh/)
 
-- [原版官方文档](https://snowdreams1006.github.io/gitbook-official/en/)
-- [中文官方文档](https://snowdreams1006.github.io/gitbook-official/zh/)
-
-> 如果你觉得**官方文档**过于晦涩难懂,想要通缩易懂地了解 `gitbook` ,那么强烈建议参考 [gitbook 入门教程](https://snowdreams1006.github.io/myGitbook/).
-
-## 版权归属原作者
+## 版权 | Copyright
 
 - [https://github.com/GitbookIO/gitbook](https://github.com/GitbookIO/gitbook)
 - [https://github.com/chwshuang/gitbook-site](https://github.com/chwshuang/gitbook-site)
 
-## 雪之梦技术驿站
+## 反馈 | Feedback
 
-> gitbook 入门教程 : [https://snowdreams1006.github.io/myGitbook/](https://snowdreams1006.github.io/myGitbook/)
+- 雪之梦技术驿站
+
+> 名称 : `雪之梦技术驿站` ,网址 : `https://snowdreams1006.github.io/`
+
+收藏理由:
+
+开源文章首发地,收藏博客不迷路,方便查看文章目录结构.
 
 ![snowdreams1006.github.io.png](snowdreams1006.github.io.png)
 
@@ -30,7 +34,7 @@
 
 关注理由:
 
-开源的不开源的都会发布到微信公众号,不再局限于系列教程而是随性而为,展示真实的技术人生.
+开源的不开源的都会发布到微信公众号,不再局限于系列教程而是随性而为,展示最真实的技术人生.
 
 ![snowdreams1006-wechat-public.jpeg](snowdreams1006-wechat-public.jpeg)
 
@@ -40,6 +44,6 @@
 
 适用场景:
 
-如果三言两语很难阐释你遇到的问题,如果你是人见人爱的妹子,那么欢迎加我私人微信一起畅谈人生.
+如果三言两语很难阐释你遇到的问题,那么欢迎加我私人微信一起畅谈人生.
 
 ![snowdreams1109-wechat-private.jpeg](snowdreams1109-wechat-private.jpeg)
