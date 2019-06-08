@@ -1,0 +1,32 @@
+{
+    "title": "gitbook-official",
+    "author": "snowdreams1006",
+    "description": "gitbook document",
+    "links": {
+        "sidebar": {
+            "snowdreams1006": "https://snowdreams1006.github.io/"
+        }
+    },
+    "plugins": [
+        "github",
+        "edit-link",
+        "mygitalk"
+    ],
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/snowdreams1006/gitbook-plugin-mygitalk"
+        },
+        "edit-link": {
+            "base": "https://github.com/snowdreams1006/gitbook-plugin-mygitalk/blob/master",
+            "label": "edit page"
+        },
+        "mygitalk": {
+            "clientID": "e06cc707f3ccd8175ae6",
+            "clientSecret": "5ae9b428e421a59f2d8a4227a73f708ac757bf53",
+            "repo": "gitbook-official",
+            "owner": "snowdreams1006",
+            "admin": ["snowdreams1006"],
+            "distractionFreeMode": false
+        }
+    }
+}
