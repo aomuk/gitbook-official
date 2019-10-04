@@ -650,7 +650,8 @@
                                 <section class="normal markdown-section">
                                 
 
-                                <h1 id="context-and-apis">Context and APIs</h1>
+<div id="vip-container">
+    <h1 id="context-and-apis">Context and APIs</h1>
 <p>GitBooks provides different APIs and contexts to plugins. These APIs can vary according to the GitBook version being used, your plugin should specify the <code>engines.gitbook</code> field in <code>package.json</code> accordingly.</p>
 <h4 id="book-instance">Book instance</h4>
 <p>The <code>Book</code> class is the central point of GitBook, it centralize all access read methods. This class is defined in <a href="https://github.com/GitbookIO/gitbook/blob/master/lib/book.js" target="_blank">book.js</a>.</p>
@@ -727,8 +728,15 @@ page.type (<span class="hljs-string">&apos;markdown&apos;</span> or <span class=
 <p>For example a filter or block function can access the current book using: <code>this.book</code>.</p>
 <h4 id="context-for-hooks">Context for Hooks</h4>
 <p>Hooks only have access to the <code>&lt;Book&gt;</code> instance using <code>this.book</code>.</p>
+<pre><code class="lang-html">&#x4F5C;&#x8005;: &#x96EA;&#x4E4B;&#x68A6;&#x6280;&#x672F;&#x9A7F;&#x7AD9;
+&#x94FE;&#x63A5;: https://snowdreams1006.github.io/gitbook-official/plugins/api.html
+&#x6765;&#x6E90;: &#x96EA;&#x4E4B;&#x68A6;&#x6280;&#x672F;&#x9A7F;&#x7AD9;
+&#x672C;&#x6587;&#x539F;&#x521B;&#x53D1;&#x5E03;&#x4E8E;&#x300C;&#x96EA;&#x4E4B;&#x68A6;&#x6280;&#x672F;&#x9A7F;&#x7AD9;&#x300D;,&#x8F6C;&#x8F7D;&#x8BF7;&#x6CE8;&#x660E;&#x51FA;&#x5904;,&#x8C22;&#x8C22;&#x5408;&#x4F5C;!
+</code></pre>
+<p><img src="https://snowdreams1006.github.io/snowdreams1006-wechat-open.png" alt="https://snowdreams1006.github.io/snowdreams1006-wechat-open.png"></p>
 <div id="gitalk-container" class="gitbook-plugin-mygitalk"></div>
-                                
+</div>
+
 <hr>
 <div class="btn-group btn-group-justified">
     
@@ -780,12 +788,13 @@ page.type (<span class="hljs-string">&apos;markdown&apos;</span> or <span class=
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API & Context","level":"3.2.5","depth":2,"next":{"title":"Test your plugin","level":"3.2.6","depth":2,"path":"plugins/testing.md","ref":"plugins/testing.md","articles":[]},"previous":{"title":"Filters","level":"3.2.4","depth":2,"path":"plugins/filters.md","ref":"plugins/filters.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/snowdreams1006/gitbook-plugin-mygitalk"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mygitalk":{"flipMoveOptions":{},"clientID":"e06cc707f3ccd8175ae6","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["snowdreams1006"],"createIssueManually":false,"distractionFreeMode":false,"repo":"gitbook-official","owner":"snowdreams1006","enableHotKey":true,"clientSecret":"5ae9b428e421a59f2d8a4227a73f708ac757bf53","pagerDirection":"last","labels":["Gitalk"]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"edit page","base":"https://github.com/snowdreams1006/gitbook-plugin-mygitalk/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"snowdreams1006","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"gitbook-official","language":"en","links":{"sidebar":{"snowdreams1006":"https://snowdreams1006.github.io/"}},"gitbook":"*","description":"gitbook document"},"file":{"path":"plugins/api.md","mtime":"2019-05-25T11:56:44.967Z","type":"markdown"},"gitbook":{"version":"3.3.0","time":"2019-06-08T05:19:36.916Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"API & Context","level":"3.2.5","depth":2,"next":{"title":"Test your plugin","level":"3.2.6","depth":2,"path":"plugins/testing.md","ref":"plugins/testing.md","articles":[]},"previous":{"title":"Filters","level":"3.2.4","depth":2,"path":"plugins/filters.md","ref":"plugins/filters.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","openwrite","copyright","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/snowdreams1006/gitbook-official"},"copyright":{"site":"https://snowdreams1006.github.io/gitbook-official","author":"雪之梦技术驿站","website":"雪之梦技术驿站","image":"https://snowdreams1006.github.io/snowdreams1006-wechat-open.png"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"openwrite":{"blogId":"15702-1569305559839-744","name":"雪之梦技术驿站","qrcode":"https://snowdreams1006.github.io/snowdreams1006-wechat-public.jpeg","keyword":"vip"},"mygitalk":{"flipMoveOptions":{},"clientID":"3f62415a283d19cbd696","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["snowdreams1006"],"createIssueManually":false,"distractionFreeMode":false,"repo":"gitbook-official","owner":"snowdreams1006","enableHotKey":true,"clientSecret":"aed0e1db0620bf5d0e3a3f0225f801997ad74e58","pagerDirection":"last","labels":["Gitalk"]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"edit page","base":"https://github.com/snowdreams1006/gitbook-official/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"snowdreams1006","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"gitbook-official","language":"en","links":{"sidebar":{"snowdreams1006":"https://snowdreams1006.github.io/"}},"gitbook":"*","description":"gitbook document"},"file":{"path":"plugins/api.md","mtime":"2019-05-25T11:56:44.967Z","type":"markdown"},"gitbook":{"version":"3.3.0","time":"2019-10-04T09:38:11.939Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
 
         
+
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
     
@@ -795,6 +804,10 @@ page.type (<span class="hljs-string">&apos;markdown&apos;</span> or <span class=
     
         
         <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copyright/copyright.js"></script>
         
     
         
@@ -829,6 +842,21 @@ page.type (<span class="hljs-string">&apos;markdown&apos;</span> or <span class=
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
+
+<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+<script>
+var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+if (!isMobile) {
+    var btw = new BTWPlugin();
+    btw.init({
+        "id": "vip-container",
+        "blogId": "15702-1569305559839-744",
+        "name": "雪之梦技术驿站",
+        "qrcode": "https://snowdreams1006.github.io/snowdreams1006-wechat-public.jpeg",
+        "keyword": "vip"
+    });
+}
+</script>
 
     </body>
 </html>
