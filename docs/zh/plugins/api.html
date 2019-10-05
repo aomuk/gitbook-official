@@ -695,83 +695,6 @@ page.type&#xFF08;<span class="hljs-string">&apos;markdown&apos;</span>&#x6216;<s
 <p>&#x4F8B;&#x5982;&#xFF0C;&#x8FC7;&#x6EE4;&#x5668;&#x6216;&#x5757;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF1A;<code>this.book</code>&#x8BBF;&#x95EE;&#x5F53;&#x524D;&#x4E66;&#x3002;</p>
 <h4 id="&#x94A9;&#x5B50;&#x7684;&#x4E0A;&#x4E0B;&#x6587;">&#x94A9;&#x5B50;&#x7684;&#x4E0A;&#x4E0B;&#x6587;</h4>
 <p>&#x94A9;&#x5B50;&#x53EA;&#x80FD;&#x4F7F;&#x7528;<code>this.book</code>&#x8BBF;&#x95EE;<code>&lt;Book&gt;</code>&#x5B9E;&#x4F8B;&#x3002;</p>
-<h1 id="context-and-apis">Context and APIs</h1>
-<p>GitBooks provides different APIs and contexts to plugins. These APIs can vary according to the GitBook version being used, your plugin should specify the <code>engines.gitbook</code> field in <code>package.json</code> accordingly.</p>
-<h4 id="book-instance">Book instance</h4>
-<p>The <code>Book</code> class is the central point of GitBook, it centralize all access read methods. This class is defined in <a href="https://github.com/GitbookIO/gitbook/blob/master/book.js" target="_blank">book.js</a>.</p>
-<pre><code class="lang-js"><span class="hljs-comment">// Read configuration from book.json</span>
-<span class="hljs-keyword">var</span> value = book.config.get(<span class="hljs-string">&apos;title&apos;</span>, <span class="hljs-string">&apos;Default Value&apos;</span>);
-
-<span class="hljs-comment">// Resolve a filename to an absolute path</span>
-<span class="hljs-keyword">var</span> filepath = book.resolve(<span class="hljs-string">&apos;README.md&apos;</span>);
-
-<span class="hljs-comment">// Render an inline markup string</span>
-book.renderInline(<span class="hljs-string">&apos;markdown&apos;</span>, <span class="hljs-string">&apos;This is **Markdown**&apos;</span>)
-    .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">str</span>) </span>{ ... })
-
-<span class="hljs-comment">// Render a markup string (block mode)</span>
-book.renderBlock(<span class="hljs-string">&apos;markdown&apos;</span>, <span class="hljs-string">&apos;* This is **Markdown**&apos;</span>)
-    .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">str</span>) </span>{ ... })
-</code></pre>
-<h4 id="output-instance">Output instance</h4>
-<p>The <code>Output</code> class represent the output/write process.</p>
-<pre><code class="lang-js"><span class="hljs-comment">// Return root folder for the output</span>
-<span class="hljs-keyword">var</span> root = output.root();
-
-<span class="hljs-comment">// Resolve a file in the output folder</span>
-<span class="hljs-keyword">var</span> filepath = output.resolve(<span class="hljs-string">&apos;myimage.png&apos;</span>);
-
-<span class="hljs-comment">// Convert a filename to an URL (returns a path to an html file)</span>
-<span class="hljs-keyword">var</span> fileurl = output.toURL(<span class="hljs-string">&apos;mychapter/README.md&apos;</span>);
-
-<span class="hljs-comment">// Write a file in the output folder</span>
-output.writeFile(<span class="hljs-string">&apos;hello.txt&apos;</span>, <span class="hljs-string">&apos;Hello World&apos;</span>)
-    .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ ... });
-
-<span class="hljs-comment">// Copy a file to the output folder</span>
-output.copyFile(<span class="hljs-string">&apos;./myfile.jpg&apos;</span>, <span class="hljs-string">&apos;cover.jpg&apos;</span>)
-    .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ ... });
-
-<span class="hljs-comment">// Verify that a file exists</span>
-output.hasFile(<span class="hljs-string">&apos;hello.txt&apos;</span>)
-    .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exists</span>) </span>{ ... });
-</code></pre>
-<h4 id="page-instance">Page instance</h4>
-<p>A page instance represent the current parsed page.</p>
-<pre><code class="lang-js"><span class="hljs-comment">// Title of the page (from SUMMARY)</span>
-page.title
-
-<span class="hljs-comment">// Content of the page (Markdown/Asciidoc/HTML according to the stage)</span>
-page.content
-
-<span class="hljs-comment">// Relative path in the book</span>
-page.path
-
-<span class="hljs-comment">// Absolute path to the file</span>
-page.rawPath
-
-<span class="hljs-comment">// Type of parser used for this file</span>
-page.type (<span class="hljs-string">&apos;markdown&apos;</span> or <span class="hljs-string">&apos;asciidoc&apos;</span>)
-</code></pre>
-<h4 id="context-for-blocks-and-filters">Context for Blocks and Filters</h4>
-<p>Blocks and filters have access to the same context, this context is bind to the template engine execution:</p>
-<pre><code class="lang-js">{
-    <span class="hljs-comment">// Current templating syntax</span>
-    <span class="hljs-string">&quot;ctx&quot;</span>: {
-        <span class="hljs-comment">// For example, after a {% set message = &quot;hello&quot; %}</span>
-        <span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;hello&quot;</span>
-    },
-
-    <span class="hljs-comment">// Book instance</span>
-    <span class="hljs-string">&quot;book&quot;</span> &lt;Book&gt;,
-
-    <span class="hljs-comment">// Output instance</span>
-    <span class="hljs-string">&quot;output&quot;</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Output</span>&gt;</span>
-}
-</span></code></pre>
-<p>For example a filter or block function can access the current book using: <code>this.book</code>.</p>
-<h4 id="context-for-hooks">Context for Hooks</h4>
-<p>Hooks only have access to the <code>&lt;Book&gt;</code> instance using <code>this.book</code>.</p>
 <pre><code class="lang-html">&#x4F5C;&#x8005;: &#x96EA;&#x4E4B;&#x68A6;&#x6280;&#x672F;&#x9A7F;&#x7AD9;
 &#x94FE;&#x63A5;: https://snowdreams1006.github.io/gitbook-official/zh/plugins/api.html
 &#x6765;&#x6E90;: &#x96EA;&#x4E4B;&#x68A6;&#x6280;&#x672F;&#x9A7F;&#x7AD9;
@@ -822,7 +745,7 @@ page.type (<span class="hljs-string">&apos;markdown&apos;</span> or <span class=
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API＆Context","level":"3.2.5","depth":2,"next":{"title":"测试你的插件","level":"3.2.6","depth":2,"path":"plugins/testing.md","ref":"plugins/testing.md","articles":[]},"previous":{"title":"过滤器","level":"3.2.4","depth":2,"path":"plugins/filters.md","ref":"plugins/filters.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","openwrite","copyright","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/snowdreams1006/gitbook-official"},"livereload":{},"copyright":{"site":"https://snowdreams1006.github.io/gitbook-official","author":"雪之梦技术驿站","website":"雪之梦技术驿站","image":"https://snowdreams1006.github.io/snowdreams1006-wechat-open.png"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"openwrite":{"blogId":"15702-1569305559839-744","name":"雪之梦技术驿站","qrcode":"https://snowdreams1006.github.io/snowdreams1006-wechat-public.jpeg","keyword":"vip"},"mygitalk":{"flipMoveOptions":{},"clientID":"3f62415a283d19cbd696","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["snowdreams1006"],"createIssueManually":false,"distractionFreeMode":false,"repo":"gitbook-official","owner":"snowdreams1006","enableHotKey":true,"clientSecret":"aed0e1db0620bf5d0e3a3f0225f801997ad74e58","pagerDirection":"last","labels":["Gitalk"]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"edit page","base":"https://github.com/snowdreams1006/gitbook-official/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"snowdreams1006","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"gitbook-official","language":"zh","links":{"sidebar":{"snowdreams1006":"https://snowdreams1006.github.io/"}},"gitbook":"*","description":"gitbook document"},"file":{"path":"plugins/api.md","mtime":"2019-05-25T11:56:44.987Z","type":"markdown"},"gitbook":{"version":"3.3.0","time":"2019-10-05T04:29:39.290Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"API＆Context","level":"3.2.5","depth":2,"next":{"title":"测试你的插件","level":"3.2.6","depth":2,"path":"plugins/testing.md","ref":"plugins/testing.md","articles":[]},"previous":{"title":"过滤器","level":"3.2.4","depth":2,"path":"plugins/filters.md","ref":"plugins/filters.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","openwrite","copyright","mygitalk"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/snowdreams1006/gitbook-official"},"copyright":{"site":"https://snowdreams1006.github.io/gitbook-official","author":"雪之梦技术驿站","website":"雪之梦技术驿站","image":"https://snowdreams1006.github.io/snowdreams1006-wechat-open.png"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"openwrite":{"blogId":"15702-1569305559839-744","name":"雪之梦技术驿站","qrcode":"https://snowdreams1006.github.io/snowdreams1006-wechat-public.jpeg","keyword":"vip"},"mygitalk":{"flipMoveOptions":{},"clientID":"3f62415a283d19cbd696","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["snowdreams1006"],"createIssueManually":false,"distractionFreeMode":false,"repo":"gitbook-official","owner":"snowdreams1006","enableHotKey":true,"clientSecret":"aed0e1db0620bf5d0e3a3f0225f801997ad74e58","pagerDirection":"last","labels":["Gitalk"]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"edit page","base":"https://github.com/snowdreams1006/gitbook-official/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"snowdreams1006","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"gitbook-official","language":"zh","links":{"sidebar":{"snowdreams1006":"https://snowdreams1006.github.io/"}},"gitbook":"*","description":"gitbook document"},"file":{"path":"plugins/api.md","mtime":"2019-10-05T04:45:38.561Z","type":"markdown"},"gitbook":{"version":"3.3.0","time":"2019-10-05T04:50:26.783Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>
@@ -850,10 +773,6 @@ page.type (<span class="hljs-string">&apos;markdown&apos;</span> or <span class=
     
         
         <script src="../../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

@@ -20,5 +20,24 @@ $ gitbook-plugin create
 
 您将被要求一个插件名称，以及一些其他的内容来完成创建过程。
 
+## 发布您的插件
 
-###发布你的插件
+GitBook插件可以在[NPM](https://www.npmjs.com)上发布。
+
+要发布新插件，您需要在[npmjs.com](https://www.npmjs.com)上创建一个帐户，然后通过命令行发布：
+
+```
+$ npm publish
+```
+
+## 专用插件
+
+专用插件可以托管在GitHub上，并使用`git` urls：
+
+```
+{
+    "plugins": [
+        "myplugin@git+https://github.com/MyCompany/mygitbookplugin.git#1.0.0"
+    ]
+}
+```
