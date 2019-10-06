@@ -40,10 +40,19 @@
             "keyword": "vip"
         },
         "copyright": {
-            "site": "https://snowdreams1006.github.io/gitbook-official",
-            "author": "雪之梦技术驿站",
-            "website": "雪之梦技术驿站",
-            "image": "https://snowdreams1006.github.io/snowdreams1006-wechat-open.png"
+            "site": "https://snowdreams1006.github.io/gitbook-plugin-copyright",
+            "author": {
+                "en": "snowdreams1006",
+                "zh": "雪之梦技术驿站"
+            },
+            "website": {
+                "en": "snowdreams1006's Gitbook",
+                "zh": "雪之梦技术驿站"
+            },
+            "image": {
+                "en": "https://snowdreams1006.github.io/snowdreams1006-wechat-open.png",
+                "zh": "https://snowdreams1006.github.io/snowdreams1006-wechat-open.png"
+            }
         },
         "mygitalk": {
             "clientID": "3f62415a283d19cbd696",
