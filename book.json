@@ -13,7 +13,8 @@
         "edit-link-plus",
         "openwrite",
         "copyright",
-        "mygitalk"
+        "mygitalk",
+        "multilingual-index"
     ],
     "pluginsConfig": {
         "favicon": "favicon.ico",
@@ -66,6 +67,10 @@
             "owner": "snowdreams1006",
             "admin": ["snowdreams1006"],
             "distractionFreeMode": false
+        },
+        "multilingual-index": {
+            "enableSuper": false,
+            "index":"index.html"
         }
     }
 }
