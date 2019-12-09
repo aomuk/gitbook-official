@@ -10,7 +10,7 @@
     "plugins": [
         "favicon-custom",
         "github-buttons",
-        "edit-link",
+        "edit-link-plus",
         "openwrite",
         "copyright",
         "mygitalk"
@@ -26,8 +26,13 @@
                 "size": "small"
             }]
         },
-        "edit-link": {
-            "base": "https://github.com/snowdreams1006/gitbook-official/blob/master",
+        "edit-link-plus": {
+            "base": {
+              "snowdreams1006.github.io":"https://github.com/snowdreams1006/gitbook-official/edit/master",
+              "snowdreams1006.gitlab.io":"https://gitlab.com/snowdreams1006/gitbook-official/edit/master",
+              "snowdreams1006.gitee.io":"https://gitee.com/snowdreams1006/gitbook-official/edit/master"
+            },
+            "defaultBase": "https://github.com/snowdreams1006/gitbook-official/edit/master",
             "label": {
                 "en": "Edit This Page",
                 "zh": "编辑本页"
